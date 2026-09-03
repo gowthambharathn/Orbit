@@ -1,28 +1,29 @@
 plugins {
+    base
     `maven-publish`
 }
 
 group = "com.github.gowthambharathn"
-version = "1.0.0"
+version = "1.0.1"
 
 publishing {
     publications {
         create<MavenPublication>("release") {
-
             groupId = "com.github.gowthambharathn"
             artifactId = "Orbit"
             version = "1.0.0"
 
-            artifact("orbit-release.aar")
+            artifact(file("orbit-release.aar"))
 
             pom {
                 name.set("Orbit")
-
                 description.set(
-                    "A reusable Android development toolkit with Jetpack Compose UI components and utilities."
+                    "Reusable Android UI components and utilities"
                 )
 
-                url.set("https://github.com/gowthambharathn/Orbit")
+                url.set(
+                    "https://github.com/gowthambharathn/Orbit"
+                )
             }
         }
     }
